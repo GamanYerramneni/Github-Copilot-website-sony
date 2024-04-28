@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sony Showcase</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .nav-button {
+        background: #444;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+        color: white;
+    }
+    .slider {
+        width: 100%;
+        overflow: hidden;
+    }
+    .slider img {
+        width: 100%;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+    .product {
+        margin: 20px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+    .product img {
+        width: 100%;
+        max-width: 300px;
+    }
+    footer {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+<header>
+    <button class="nav-button">Home</button>
+    <button class="nav-button">Products</button>
+    <button class="nav-button">Contact</button>
+</header>
+<div class="slider">
+    <img src="https://example.com/product1.jpg" id="slider-image">
+</div>
+<main>
+    <div class="product">
+        <img src="https://example.com/product1.jpg" alt="Product 1">
+        <h2>Product 1</h2>
+        <p>Description of Product 1. Highlighting its key features and specifications.</p>
+    </div>
+    <!-- Repeat for other products -->
+</main>
+<footer>
+    Copyright © Sony Corporation 2023
+    <div>
+        <h3>Contact Us</h3>
+        <form>
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Your email">
+            <textarea placeholder="Your message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</footer>
+<script>
+    const images = ["https://example.com/product1.jpg", "https://example.com/product2.jpg", "https://example.com/product3.jpg"];
+    let currentImageIdx = 0;
+
+    function changeImage() {
+        currentImageIdx = (currentImageIdx + 1) % images.length;
+        document.getElementById('slider-image').src = images[currentImageIdx];
+    }
+    setInterval(changeImage, 3000);
+</script>
+</body>
+</html>
